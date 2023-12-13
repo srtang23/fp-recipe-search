@@ -1,1 +1,1 @@
-# final project for hcde310
+# HCDE310 Final Project - Recipe Search
