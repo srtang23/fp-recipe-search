@@ -1,10 +1,9 @@
 from flask import Flask, render_template, request
+from keys import recipe_api_key, recipe_api_url
 import requests
 
 app = Flask(__name__)
 
-RECIPE_API_KEY = 'YOUR API KEY'
-RECIPE_API_URL = 'https://api.api-ninjas.com/v1/recipe'
 INDEXED_RESULTS = []
 
 @app.route('/')
@@ -15,8 +14,8 @@ def index():
 def search():
     dish_name = request.form['dish_name']
     params = {'query': dish_name, 'offset': 0}
-    headers = {'X-Api-Key': RECIPE_API_KEY}
-    response = requests.get(RECIPE_API_URL, params=params, headers=headers)
+    headers = {'X-Api-Key': recipe_api_key}
+    response = requests.get(recipe_api_url, params=params, headers=headers)
 
     if response.status_code == 200:
         recipes = response.json()
