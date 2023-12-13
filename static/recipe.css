@@ -20,7 +20,7 @@ h1 {
   font-size: 40px;
 }
 
-#instruction, #checklist {
+#instruction, #checklist, #servings {
   background-color: white;
   margin: 30px;
   border-radius: 15px;
