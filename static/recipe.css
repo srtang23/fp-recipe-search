@@ -1,0 +1,45 @@
+body {
+  margin: 0px;
+  background-color: #fcf8f0;
+  color: #6d4c41;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+a:hover {
+  color: black;
+}
+
+h1, h2 {
+  margin-left: 30px;
+  text-align: center;
+}
+
+h1 {
+  text-shadow: 1px 1px 2px;
+  font-size: 40px;
+}
+
+#instruction, #checklist {
+  background-color: white;
+  margin: 30px;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 5px 5px;
+}
+
+h2 {
+  margin-left: 20px;
+}
+
+p {
+  margin: 10px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+ul {
+  list-style: none;
+  font-size: 18px;
+}
+

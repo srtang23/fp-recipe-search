@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results for "{{ dish_name }}"</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='search.css') }}">
+</head>
+<body>
+  <h1>Search Results for "{{ dish_name }}":</h1>
+
+  {% if recipes %}
+    <ol>
+      {% for recipe in recipes %}
+        <li>
+          <p><strong><a href="{{ url_for('generate_recipe_info', result_index=loop.index)}}">{{ recipe.title }}</a></strong></p>
+        </li>
+      {% endfor %}
+    </ol>
+  {% else %}
+    <p>No recipes found for "{{ dish_name }}"</p>
+  {% endif %}
+</body>
+</html>

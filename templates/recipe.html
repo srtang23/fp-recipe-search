@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ recipe.title }} recipe</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='recipe.css') }}">
+</head>
+<body>
+  <div>
+    <h1>{{ recipe.title }}</h1>
+    <section id="instruction">
+      <h2>Instructions</h2>
+      {% if recipe.instructions %}
+        <p>{{ recipe.instructions }}</p>
+      {% else %}
+        <p>No instructions for this recipe available</p>
+      {% endif %}
+    </section>
+    <section id="checklist">
+      <h2 class="section-title">Grocery Checklist</h2>
+      {% if recipe.ingredients %}
+        <ul class="grocery-checklist">
+          {% for ingredient_data in recipe.ingredients.split('|') %}
+            {% set ingredient = {'name': ingredient_data, 'checked': False} %}
+              <li class="{% if ingredient.checked %}cross-out{% endif %}">
+                <label>
+                    <input type="checkbox" {% if ingredient.checked %}checked{% endif %}> {{ ingredient.name }}
+                </label>
+              </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>No ingredients to display</p>
+      {% endif %}
+    </section>
+  </div>
+</body>
+</html>

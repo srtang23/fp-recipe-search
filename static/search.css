@@ -1,0 +1,40 @@
+body {
+  margin: 0px;
+  background-color: #fcf8f0;
+  color: #6d4c41;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 35px;
+  text-align: center;
+}
+
+ol {
+  background-color: white;
+  margin: 20px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px;
+}
+
+li {
+  padding: 2px;
+}
+
+a {
+  color: #6d4c41;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #4a2e23;
+}
+
+ol {
+  font-size: 18px;
+}
+
+li::marker {
+  font-size: 18px;
+}
